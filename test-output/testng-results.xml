@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-10-27T22:38:08 WAT" name="MyTestSuite" finished-at="2024-10-27T22:39:10 WAT" duration-ms="61276">
+    <groups>
+    </groups>
+    <test started-at="2024-10-27T22:38:08 WAT" name="TestRun" finished-at="2024-10-27T22:39:10 WAT" duration-ms="61276">
+      <class name="loginSuite">
+        <test-method is-config="true" signature="startBrowser()[pri:0, instance:loginSuite@47542153]" started-at="2024-10-27T22:38:08 WAT" name="startBrowser" finished-at="2024-10-27T22:38:10 WAT" duration-ms="1662" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startBrowser -->
+        <test-method signature="userLogin()[pri:0, instance:loginSuite@47542153]" started-at="2024-10-27T22:38:10 WAT" name="userLogin" finished-at="2024-10-27T22:39:04 WAT" duration-ms="54274" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userLogin -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:loginSuite@47542153]" started-at="2024-10-27T22:39:04 WAT" name="closeBrowser" finished-at="2024-10-27T22:39:10 WAT" duration-ms="5300" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- loginSuite -->
+    </test> <!-- TestRun -->
+  </suite> <!-- MyTestSuite -->
+</testng-results>

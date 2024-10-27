@@ -1,0 +1,11 @@
+
+<suite name="MyTestSuite">
+    <listeners>
+        <listener class-name="org.testng.reporters.XMLReporter" />
+    </listeners>
+    <test name="TestRun">
+        <classes>
+            <class name="loginSuite"/> <!-- Replace with your actual test class names -->
+        </classes>
+    </test>
+</suite>
