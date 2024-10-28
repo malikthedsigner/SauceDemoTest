@@ -6,6 +6,8 @@
     <test name="TestRun">
         <classes>
             <class name="loginSuite"/> <!-- Replace with your actual test class names -->
+            <class name="CheckoutSuite"/>
+            <class name="ShoppingCartSuite"/>
         </classes>
     </test>
 </suite>
