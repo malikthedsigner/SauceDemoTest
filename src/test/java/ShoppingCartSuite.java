@@ -2,10 +2,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -15,23 +17,29 @@ public class ShoppingCartSuite {
     WebDriver driver;
     WebDriverWait wait;
 
+    @Parameters("browser")
     @BeforeTest
-    public void startBrowser() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+    public void startBrowser(String browser) {
+        if (browser.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        } else if (browser.equalsIgnoreCase("edge")) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+        }
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        // Login to the application
+        // Login to the site
         login("standard_user", "secret_sauce");
     }
-
     @AfterTest
     public void stopBrowser() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
-
     @Test(priority = 0)
     public void addProductToCart() {
         clickElement(By.cssSelector("#add-to-cart-sauce-labs-backpack"));
